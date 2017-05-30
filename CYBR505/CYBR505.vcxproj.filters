@@ -27,5 +27,11 @@
     <ClCompile Include="LabMain.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab5.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
