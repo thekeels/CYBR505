@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main(void)
+int Lab1(void)
 {
 	printf("Hello!\n");
 	printf("\t\t\tWelcome to CYBR 505 course");

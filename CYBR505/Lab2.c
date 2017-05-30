@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main(void)
+int Lab2(void)
 {
 	int StudentId, CourseId, LabId;
 	StudentId = 1234567;
