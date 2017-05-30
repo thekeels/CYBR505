@@ -3,7 +3,6 @@
 int main(void)
 {
 	double a, b, c, root1, root2;
-	double imag;
 	printf("Enter the coefficients: \n");
 	scanf_s("%lf", &a);
 	scanf_s("%lf", &b);
