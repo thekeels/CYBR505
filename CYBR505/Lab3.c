@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main(void)
+int Lab3(void)
 {
 	float l, h, w, area;
 	l = 2;
