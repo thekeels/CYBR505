@@ -15,7 +15,7 @@ int main(void)
 	}
 	else {
 		printf("x1= %lf\n", root1);
-		printf("x1= %lf\n", root2);
+		printf("x2= %lf\n", root2);
 	}
 
 	getchar();
