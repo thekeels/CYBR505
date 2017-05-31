@@ -23,15 +23,15 @@ int main(void)
 		}
 		else if (labnumber == 4)
 		{
-			Lab3();
+			Lab4();
 		}
 		else if (labnumber == 5)
 		{
-			Lab3();
+			Lab5();
 		}
 		else if (labnumber == 6)
 		{
-			Lab3();
+			Lab6();
 		}
 		else
 		{

@@ -1,5 +1,5 @@
 #include <stdio.h>
-int main(void)
+int Lab4(void)
 {
 	float R1, R2, R3, Rtotal;
 	printf("Enter the value for resistor R1: ");

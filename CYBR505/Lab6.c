@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int main(void)
+int Lab6(void)
 {
 	int x;
 	printf("Please enter a number: \n");

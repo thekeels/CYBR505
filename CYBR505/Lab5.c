@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-int main(void)
+int Lab5(void)
 {
 	double a, b, c, root1, root2;
 	printf("Enter the coefficients: \n");
