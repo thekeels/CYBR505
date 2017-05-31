@@ -21,8 +21,7 @@ int main()
 	scanf_s("%lf", &second);
 	second_sqrt = sqrt(second);
 	/* Display the square root of the sum of the two numbers. */
-	printf("THe square root of the second number is %.2f\n", second_sqrt);
-
+	printf("The square root of the second number is %.2f\n", second_sqrt);
 	sum_sqrt = sqrt(first + second);
 	printf("The square root of the sum of the two numbers is %.2f\n", sum_sqrt);
 	getchar();
