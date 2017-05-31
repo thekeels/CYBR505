@@ -8,7 +8,7 @@ int main(void)
 	scanf_s("%d", &max_num);
 	for (int count = 0; count < max_num; count++)
 	{
-		printf("Enter a number:");
+		printf("Enter a number: ");
 		scanf_s("%d", &x);
 		if (x % 2 == 0)
 		{
