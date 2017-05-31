@@ -33,7 +33,7 @@
     <ClCompile Include="Lab5.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Documents\Visual Studio 2015\Projects\CYBR505\CYBR505\LectureExample.c">
+    <ClCompile Include="LectureExample.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
