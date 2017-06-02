@@ -1,14 +1,9 @@
 #include <stdio.h>
 
-float converter(float celsius)
-{
-	float fahrenheit = (9.0 / 5.0) * celsius + 32;
-	return fahrenheit;
-}
 int main()
 {
 	int n;
-	float f, c;
+	double f, c;
 
 	printf("DEGREES\t\tDEGREES\n");
 	printf("CELSIUS\t\tFAHRENHEIT\n");
@@ -16,9 +11,9 @@ int main()
 
 	for (n=1;n<11;n=n++)
 	{
-		c = 5 * n;
-		f = converter(c);
-		printf("%.0f\t\t%.2f\n", c, f);
+		c = 5 * (double)n;
+		f = (9.0/5.0) * c + 32;
+		printf("%.0lf\t\t%.2lf\n", c, f);
 	}
 
 	getchar();
