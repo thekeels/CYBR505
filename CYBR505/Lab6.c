@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int main(void)
+int Lab6(void)
 {
 	int x, odd_sum, even_sum, max_num;
 	odd_sum = even_sum = 0;
