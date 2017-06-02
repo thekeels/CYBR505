@@ -16,14 +16,14 @@ int main(void)
 	for (i = 0; i < elements; i++)
 	{
 		scanf_s("%d", &number);
-		{
+		
 			if (number % 3 == 0)
 			{
 				printf("The number is divisible by 3.\n");
 				sum += number;
 			}
-			else {}
-		}
+			
+		
 	}
 
 	printf("Sum of the numbers that are divisible by 3 is: %d\n", sum);
