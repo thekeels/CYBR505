@@ -22,9 +22,7 @@ int main(void)
 				printf("The number is divisible by 3.\n");
 				sum += number;
 			}
-			else
-			{
-			}
+			else {}
 		}
 	}
 
