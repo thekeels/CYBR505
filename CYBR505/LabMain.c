@@ -3,38 +3,30 @@ int main(void)
 {
 	int labnumber;
 	int endlabs = 1;
-	int Lab1(), Lab2(), Lab3(), Lab4(), Lab5(), Lab6();
+	int Lab1(), Lab2(), Lab3(), Lab4(), Lab5(), Lab6(), Lab7();
 	do {
 		system("cls");
 		printf("Enter the lab number you want to run (0 to exit): ");
 		scanf_s("%d", &labnumber);
 		printf("\n\n******************************************************************************\n\n");
-		if (labnumber == 1)
+		switch(labnumber)
 		{
+		case 1:
 			Lab1();
-		}
-		else if (labnumber == 2)
-		{
+		
+		case 2:
 			Lab2();
-		}
-		else if (labnumber == 3)
-		{
+		case 3:
 			Lab3();
-		}
-		else if (labnumber == 4)
-		{
+		case 4:
 			Lab4();
-		}
-		else if (labnumber == 5)
-		{
+		case 5:
 			Lab5();
-		}
-		else if (labnumber == 6)
-		{
+		case 6:
 			Lab6();
-		}
-		else
-		{
+		case 7:
+			Lab7();
+		default:
 			endlabs = 0;
 		}
 		printf("\n\n******************************************************************************\n\n");
