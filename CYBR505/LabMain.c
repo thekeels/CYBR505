@@ -13,19 +13,25 @@ int main(void)
 		{
 		case 1:
 			Lab1();
-		
+			break;
 		case 2:
 			Lab2();
+			break;
 		case 3:
 			Lab3();
+			break;
 		case 4:
 			Lab4();
+			break;
 		case 5:
 			Lab5();
+			break;
 		case 6:
 			Lab6();
+			break;
 		case 7:
 			Lab7();
+			break;
 		default:
 			endlabs = 0;
 		}
