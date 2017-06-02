@@ -48,5 +48,8 @@
     <ClCompile Include="Lab8.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab9.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
