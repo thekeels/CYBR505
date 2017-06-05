@@ -60,5 +60,8 @@
     <ClCompile Include="Lab12.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Pointers.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
