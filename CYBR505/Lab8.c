@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int Lab8()
 {
 	int n;
 	double f, c;

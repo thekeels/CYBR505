@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main()
+int Lab12()
 {
 	int i, num;
 	int max_value = -32768;

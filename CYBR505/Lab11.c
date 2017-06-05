@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int Lab11()
 {
 	int i, j;
 

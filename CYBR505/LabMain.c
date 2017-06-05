@@ -3,7 +3,7 @@ int main(void)
 {
 	int labnumber;
 	int endlabs = 1;
-	int Lab1(), Lab2(), Lab3(), Lab4(), Lab5(), Lab6(), Lab7();
+	int Lab1(), Lab2(), Lab3(), Lab4(), Lab5(), Lab6(), Lab7(), Lab8(), Lab9(), Lab10(), Lab11(), Lab12();
 	do {
 		system("cls");
 		printf("Enter the lab number you want to run (0 to exit): ");
@@ -31,6 +31,21 @@ int main(void)
 			break;
 		case 7:
 			Lab7();
+			break;
+		case 8:
+			Lab8();
+			break;
+		case 9:
+			Lab9();
+			break;
+		case 10:
+			Lab10();
+			break;
+		case 11:
+			Lab11();
+			break;
+		case 12:
+			Lab12();
 			break;
 		default:
 			endlabs = 0;

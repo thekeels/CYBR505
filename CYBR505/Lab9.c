@@ -1,6 +1,6 @@
 #include<stdio.h>
 
-int main()
+int Lab9()
 {
 	int i, j;
 	double score_sum, score, average;
