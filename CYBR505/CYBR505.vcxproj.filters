@@ -66,5 +66,8 @@
     <ClCompile Include="Lab13.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab14.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
