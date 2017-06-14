@@ -7,7 +7,7 @@ int main()
 	int score1, score2;
 	float ave;
 	printf("Please enter the 2 numbers to average: ");
-	scanf_s("%d %d", &score1, &score2);
+	scanf_s("%d%d", &score1, &score2);
 	ave = AverageTwo(score1, score2);
 	printf("\nThe average is: %.2f", ave);
 	getchar();
