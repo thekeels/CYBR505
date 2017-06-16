@@ -21,7 +21,8 @@ int main()
 	BaseChange(binary,n);
 	//Print the binary conversion
 	printdashes();
-	printf("\nThe number %d in binary is:\t\t%c%c%c%c", n, binary[3], binary[2], binary[1], binary[0]);
+	printf("\nThe number %d in binary is:\t\t%c%c%c%c\n", n, binary[3], binary[2], binary[1], binary[0]);
+	printdashes();
 	getchar();
 	getchar();
 	return (0);
