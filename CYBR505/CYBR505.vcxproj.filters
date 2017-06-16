@@ -72,5 +72,17 @@
     <ClCompile Include="TakeHomeLab1.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab15.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab16.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab17.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab18.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

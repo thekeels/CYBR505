@@ -1,0 +1,35 @@
+#include<stdio.h>
+int main()
+{
+	int n, i;
+	int num;
+	int A[9];
+
+	printf("Enter a value between 2-9 for the array size n\n");
+	scanf_s("%d", &n);
+	while (n < 2 || n>9)
+	{
+		printf("The array size, n, is not valid. Try again\n");
+		scanf_s("%d", &n);
+	}
+	printf("Please enter %d numbers: \n", n);
+	for (i = 0; i < n; i++)
+	{
+		scanf_s("%d", &num);
+		A[i] = num;
+	}
+	printf("\nThe elements of the array are:\n");
+	for (i = 0; i < n; i++)
+	{
+		printf("The element %d of array is %d\n", i,A[i]);
+	}
+	printf("\nThe elements of the array in reverse order are:\n");
+	for (i = n-1; i >= 0; i--)
+	{
+		printf("The element %d of array is %d\n", i, A[i]);
+	}
+
+	getchar();
+	getchar();
+	return 0;
+}
