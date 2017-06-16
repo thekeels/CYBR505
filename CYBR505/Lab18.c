@@ -17,6 +17,7 @@ int main()
 		printf("Error, outside the valid range, try again\n");
 		scanf_s("%d", &n);
 	}
+	
 	//Create the arrays
 	create_array(list1, n);
 	create_array(list2, n);
