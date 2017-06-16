@@ -8,22 +8,29 @@ int main()
 {
 	int n;
 	char binary[4];
+	// Get a decimal integer from the user
 	n = get_decimal();
+	// Validity check on the value of the input
 	while (n < 2 || n > 15)
 	{
 		printdashes();
 		printf("\nThis number is outside the acceptable range!\n\n");
 		n = get_decimal();
 	}
-		BaseChange(binary,n);
-	
+	// Convert the decimal to binary
+	BaseChange(binary,n);
+	//Print the binary conversion
 	printdashes();
 	printf("\nThe number %d in binary is:\t\t%c%c%c%c", n, binary[3], binary[2], binary[1], binary[0]);
 	getchar();
 	getchar();
 	return (0);
 }
-
+/***************************************/
+//Basechange --- converts a decimal value to binary, stored as char
+// Input: binary string memory address, decimal value
+// Output: char array with binary representation of the decimal value
+/***************************************/
 void BaseChange(char binary[], int n)
 {
 	int num;
@@ -43,12 +50,20 @@ void BaseChange(char binary[], int n)
 	}
 	return;
 }
-
+/***************************************/
+//printdashes ---prints a line of ====
+// Input: none
+// Output: prints a line of dashes
+/***************************************/
 void printdashes()
 {
 	printf("============================================================\n");
 }
-
+/***************************************/
+//get_decimal --- reads a decimal value from the user
+// Input: none
+// Output: decimal value
+/***************************************/
 int get_decimal(void) {
 	int n;
 	printdashes();
