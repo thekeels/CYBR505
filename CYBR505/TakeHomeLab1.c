@@ -9,10 +9,6 @@ int main()
 	int n;
 	char binary[4];
 	n = get_decimal();
-	//printdashes();
-	//printf("Input a number in decimal form:\t\t");
-	//scanf_s("%d", &n);
-	//while (sentinel == 1)
 	while (n < 2 || n > 15)
 	{
 		printdashes();
