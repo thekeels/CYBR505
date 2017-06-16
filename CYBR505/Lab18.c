@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 void create_array(int[], int);
-void swap_array(int[],int[]);
-void print_array(int[], int[]);
+void swap_array(int[],int[], int);
+void print_array(int[], int[], int);
 
 int main()
 {
-	int i, swap, n;
+	int n;
 	int list1[9], list2[9];
 	//Request size of the array
 	printf("Please enter the number or elements of the array, 2 < n < 10: ");
@@ -22,12 +22,12 @@ int main()
 	create_array(list2, n);
 	//Print the arrays before the swap
 	printf("List1 and List2 before swap\n");
-	print_array(list1, list2);
+	print_array(list1, list2, n);
 	//Swap the array values
-	swap_array(list1, list2);
+	swap_array(list1, list2, n);
 	//Print the arrays after the swap
 	printf("List1 and List2 after swap\n");
-	print_array(list1, list2);
+	print_array(list1, list2, n);
 
 	getchar();
 	getchar();
@@ -48,13 +48,13 @@ void create_array(int list1[],int n) {
 }
 /***************************************/
 //swap_array --- swaps the contents of arrays list1 and list2
-// Input: memory addresses of list1 and list2
+// Input: memory addresses of list1 and list2, number of elements
 // Output: swapped contents of list1 and list2
 /***************************************/
-void swap_array(int list1[],int list2[])
+void swap_array(int list1[],int list2[], int n)
 {
 	int swap;
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < n; i++)
 	{
 		swap = list1[i];
 		list1[i] = list2[i];
@@ -63,13 +63,13 @@ void swap_array(int list1[],int list2[])
 }
 /***************************************/
 //print_array --- prints the contents of arrays list1 and list2
-// Input: memory addresses of list1 and list2
+// Input: memory addresses of list1 and list2, number of elements
 // Output: prints contents of list1 and list2
 /***************************************/
-void print_array(int list1[], int list2[])
+void print_array(int list1[], int list2[], int n)
 {
 	printf("List1\t\t\tList2\n");
-	for (int i = 0; i < 5; i++)
+	for (int i = 0; i < n; i++)
 	{
 		printf("%d\t\t\t%d\n", list1[i], list2[i]);
 	}
