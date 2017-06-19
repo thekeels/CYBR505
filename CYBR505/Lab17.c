@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int Lab17()
 {
 	int i, swap;
 	int list1[5], list2[5];

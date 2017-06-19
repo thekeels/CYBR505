@@ -2,7 +2,7 @@
 
 float AverageTwo(int num1, int num2);
 
-int main()
+int Lab13()
 {
 	int score1, score2;
 	float ave;

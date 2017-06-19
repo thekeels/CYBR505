@@ -1,5 +1,5 @@
 #include<stdio.h>
-int main()
+int Lab15()
 {
 	int n, i;
 	int num;

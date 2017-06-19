@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int Lab16()
 {
 	int i, index, max;
 	int A[5];

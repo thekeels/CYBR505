@@ -2,7 +2,7 @@
 
 int Fact(int n);
 
-int main()
+int Lab14()
 {
 	int n, output;
 	int sentinel = -1000;

@@ -4,7 +4,7 @@ void create_array(int[], int);
 void swap_array(int[],int[], int);
 void print_array(int[], int[], int);
 
-int main()
+int Lab18()
 {
 	int n;
 	int list1[9], list2[9];
