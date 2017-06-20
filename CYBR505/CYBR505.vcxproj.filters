@@ -90,5 +90,8 @@
     <ClCompile Include="ArraySort.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="strings.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
