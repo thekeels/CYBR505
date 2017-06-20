@@ -1,9 +1,11 @@
 #include <stdio.h>
+#include <string.h>
 
 int main()
 {
 	int i;
 	char test[32];
+	char test2[] = "Concat";
 	printf("Enter a string: ");
 	fgets(test, 32,stdin);
 	printf("\nThe entered string was: %s!!", test);
@@ -16,7 +18,15 @@ int main()
 		}
 		else {}
 	} 
-	printf("\nThe entered string was: %s!!", test);
+	printf("\nThe entered string was: %s!!\n", test);
+	//strcpy(test, test2);
+	printf("%s\n", test);
+	strncpy(test, test2, 4);
+	printf("%s\n", test);
+
+	strncpy(test, test2+1, 4);
+	printf("%s\n", test);
+
 	getchar();
 	getchar();
 	return 0;
