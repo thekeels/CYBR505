@@ -5,12 +5,11 @@ char * Encrypt_Decrypt(char[], int, int);
 
 int main() {
 
-	int i, index;
+	int index;
 	char * Encrypted;
 	char * Decrypted;
 	char Input[len];
-	char key;
-	key = 10;
+	char key = 10;
 
 	printf("Enter your string: ");
 	//Read in a string
