@@ -99,5 +99,23 @@
     <ClCompile Include="Lab20.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab21.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab22.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab23.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A1_1.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A1_2.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="A1_3.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

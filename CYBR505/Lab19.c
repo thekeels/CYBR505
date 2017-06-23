@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h.>
 #define len 32
 
 char * Encrypt_Decrypt(char[], int, int);
