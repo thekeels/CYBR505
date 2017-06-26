@@ -26,7 +26,7 @@ int main()
 	return 0;
 }
 // Function -- Create -- creates an array of size n, of values divisible by 3
-// Input: Array pointer, size of desired array
+// Input: Array memory address, size of desired array
 // Output: Array of size n, of values > 0 and divisible by 3
 void Create(int ArrayVar[11], int n)
 {
