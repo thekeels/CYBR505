@@ -1,20 +1,22 @@
 #include <stdio.h>
 
+void printFib(int n, int x);
 int Fib(int n);
 
 int main()
 {
-	int n, result;
+	int n, result, x;
 
 	printf("Please enter n:\n");
 	scanf_s("%d", &n);
-	printf("The fibonacci sequence is: \n");
+	/*printf("The fibonacci sequence is: \n");
 	for (int i = 0; i <= n; i++)
 	{
 		result = Fib(i);
 		printf("%d\n", result);
-	}
-	
+	}*/
+	x = n;
+	printFib(n, x);
 	//printf("\nThe nth fibonacci number is:\t%d", result);
 	
 	getchar();
@@ -37,4 +39,19 @@ int Fib(int n)
 		return recurse;
 		
 	}
+}
+
+void printFib(int n, int x)
+{
+	if (n == -1)
+		return;
+	else
+	{
+		printf("%d\t", Fib(x-n));
+		printFib(n - 1, x);
+		return;
+	}
+	
+	return;
+
 }
