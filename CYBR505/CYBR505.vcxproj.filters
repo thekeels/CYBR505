@@ -123,5 +123,11 @@
     <ClCompile Include="Variables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab24.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab25.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
