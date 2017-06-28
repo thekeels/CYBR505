@@ -10,23 +10,24 @@ int main()
 	scanf_s("%d", &n);
 	result = Fib(n);
 	printf("The nth fibonacci number is:\t%d", result);
+	
 	getchar();
 	getchar();
-
 	return 0;
 
 }
 
 int Fib(int n)
 {
-	int r = 0;
-	int y = 1;
+	int recurse;
+	int firstnum = 0;
+	int secondnum = 1;
 	if (n == 0)
-		return r;
+		return firstnum;
 	else if (n == 1)
-		return y;
+		return secondnum;
 	else {
-		r = Fib(n-1)+Fib(n-2);
-		return r;
+		recurse = Fib(n-1)+Fib(n-2);
+		return recurse;
 	}
 }
