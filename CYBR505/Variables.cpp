@@ -28,7 +28,7 @@ int main()
 	int testvariable{ 100000 };
 	int testtrunck = testvariable;
 	//short int test  = testtrunck;
-	int x = sizeof(int);
+	double  x = sizeof(int);
 	int y = sizeof(short int);
 
 	cout << "Multiply " << endl;
