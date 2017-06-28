@@ -12,7 +12,7 @@ int main()
 	for (int i = 0; i <= n; i++)
 	{
 		result = Fib(i);
-		printf("%d\t", result);
+		printf("%d\n", result);
 	}
 	
 	//printf("\nThe nth fibonacci number is:\t%d", result);
