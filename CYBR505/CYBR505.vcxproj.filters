@@ -117,5 +117,11 @@
     <ClCompile Include="A1_3.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Recursive.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Variables.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
