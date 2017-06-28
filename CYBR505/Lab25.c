@@ -8,15 +8,21 @@ int main()
 
 	printf("Please enter n:\n");
 	scanf_s("%d", &n);
-	result = Fib(n);
-	printf("The nth fibonacci number is:\t%d", result);
+	printf("The fibonacci sequence is: \n");
+	for (int i = 0; i <= n; i++)
+	{
+		result = Fib(i);
+		printf("%d\t", result);
+	}
+	
+	//printf("\nThe nth fibonacci number is:\t%d", result);
 	
 	getchar();
 	getchar();
 	return 0;
 
 }
-
+// Fibonacci formula - to calculate nth fibonnaci number, added fib(n-1) + fib(n-2)
 int Fib(int n)
 {
 	int recurse;
@@ -29,5 +35,6 @@ int Fib(int n)
 	else {
 		recurse = Fib(n-1)+Fib(n-2);
 		return recurse;
+		
 	}
 }
