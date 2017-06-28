@@ -15,7 +15,7 @@ int firstnumber = 2;
 int multiplication()
 {
 	//int firstnumber = 2;
-	int secondnumber = 4;
+	double secondnumber = 4;
 	int result = firstnumber * secondnumber;
 	return result;
 }
@@ -30,7 +30,7 @@ int main()
 	//short int test  = testtrunck;
 	double  x = sizeof(int);
 	int y = sizeof(short int);
-
+	int z;
 	cout << "Multiply " << endl;
 	int result = multiplication();
 	cout << "Result is " << result << endl;
