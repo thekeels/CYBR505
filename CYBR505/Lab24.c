@@ -2,9 +2,9 @@
 
 int Factorial(int n);
 
-int main()
+int Lab24()
 {
-	int x, n, result;
+	int n, result;
 	printf("Please enter n:\n");
 	scanf_s("%d", &n);
 	result = Factorial(n);

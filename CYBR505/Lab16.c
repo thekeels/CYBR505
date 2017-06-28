@@ -14,7 +14,7 @@ int Lab16()
 	// Find the max of the values entered
 	for (i = 0; i < 5; i++)
 	{
-		if (A[i] > max)
+		if (A[i] >= max)
 		{
 			max = A[i];
 			index = i;

@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int Lab23()
 {
 	int i, j;
 	int Array1[3][3] = { { 1,1,1 },{ 2,2,2 },{ 3,3,3 } };

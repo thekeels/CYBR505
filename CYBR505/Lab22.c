@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int main()
+int Lab22()
 {
 	int i, j;
 	int ArrayVar[4][4];

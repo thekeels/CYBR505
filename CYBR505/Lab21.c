@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-int main()
+int Lab21()
 {
 
 	int i, j;
@@ -23,7 +23,7 @@ int main()
 		for (j = 0; j < 4; j++)
 		{
 			scanf_s("%d", &ArrayVar[i][j]);
-			printf("%d\t", ArrayVar[i][j]);
+			//printf("%d\t", ArrayVar[i][j]);
 			sum += ArrayVar[i][j];
 		}
 

@@ -2,11 +2,11 @@
 #include <string.h.>
 #define len 32
 
-char * Encrypt_Decrypt(char[], int, int);
+char * Encrypt_Decrypt(char[], char, size_t);
 
-int main() {
+int Lab19() {
 
-	int index;
+	size_t index;
 	char * Encrypted;
 	char * Decrypted;
 	char Input[len];
@@ -14,6 +14,7 @@ int main() {
 
 	printf("Enter your string: ");
 	//Read in a string
+	getchar();
 	fgets(Input, len, stdin);
 	//Find length of the string
 	index = strlen(Input);
@@ -31,7 +32,7 @@ int main() {
 //Encrypt_Decrypt -- performs XOR encryption/decryption of a string
 //Input:  Memory address of the input string, the key, length of the input string
 //Output: Memory address of the output string
-char * Encrypt_Decrypt(char Input[], int key, int index)
+char * Encrypt_Decrypt(char Input[], char key, size_t index)
 {
 	int i;
 	static char Output[len];

@@ -3,9 +3,9 @@
 void printFib(int n, int x);
 int Fib(int n);
 
-int main()
+int Lab25()
 {
-	int n, result, x;
+	int n, x;
 
 	printf("Please enter n:\n");
 	scanf_s("%d", &n);

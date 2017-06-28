@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-int main()
+int Lab20()
 
 {
 	char Input[32];
-	char Output[32];
 	int i = 0;
 	int length;
 	printf("Please enter the input string in uppercase: ");
 	// Read in the input string
+	getchar();
 	fgets(Input, 32, stdin);
 	// Convert the input string to lowercase by adding 32 to the ASCII value
 	while(Input[i] != '\n')

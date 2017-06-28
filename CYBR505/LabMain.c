@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "LabList.h"
 
 int main(void)
 {
 	int labnumber;
 	int endlabs = 1;
-	int Lab1(), Lab2(), Lab3(), Lab4(), Lab5(), Lab6(), Lab7(), 
-		Lab8(), Lab9(), Lab10(), Lab11(), Lab12(), Lab13(), Lab14(),
-		Lab15(), Lab16(), Lab17(), Lab18();
+
 	do {
 		system("cls");
 		printf("Enter the lab number you want to run (0 to exit): ");
@@ -68,6 +67,27 @@ int main(void)
 			break;
 		case 18:
 			Lab18();
+			break;
+		case 19:
+			Lab19();
+			break;
+		case 20:
+			Lab20();
+			break;
+		case 21:
+			Lab21();
+			break;
+		case 22:
+			Lab22();
+			break;
+		case 23:
+			Lab23();
+			break;
+		case 24:
+			Lab24();
+			break;
+		case 25:
+			Lab25();
 			break;
 		default:
 			endlabs = 0;
