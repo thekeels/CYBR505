@@ -1,10 +1,12 @@
 #include <stdio.h>
 
+
 int Fact(int n);
 
 int Lab14()
 {
-	int n, output;
+	int n;
+	int output = 0;
 	int sentinel = -1000;
 
 	printf("Please enter n\n");

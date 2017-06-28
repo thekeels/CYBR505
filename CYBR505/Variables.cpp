@@ -1,6 +1,15 @@
+#ifndef _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
+#endif // !_USE_MATH_DEFINES
+
 #include <iostream>
+#include <cmath>
+
+
+
 using namespace std;
 
+constexpr double test() { return M_PI * 2; };
 int firstnumber = 2;
 
 int multiplication()
@@ -13,6 +22,15 @@ int multiplication()
 
 int main()
 {
+
+	double pitest = test();
+	double pi = M_PI;
+	int testvariable{ 100000 };
+	int testtrunck = testvariable;
+	//short int test  = testtrunck;
+	int x = sizeof(int);
+	int y = sizeof(short int);
+
 	cout << "Multiply " << endl;
 	int result = multiplication();
 	cout << "Result is " << result << endl;
