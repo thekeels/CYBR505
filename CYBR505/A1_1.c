@@ -5,7 +5,7 @@ void printArrays(int positive[], int negative[], int index[]);
 
 int main() {
 
-	int index[2]; //Create an index to count the number of pos/neg numbers
+	int index[2]; //Create an index to count the number of pos/neg numbers. index[0] counts positive numbers, index[1] counts negative numbers
 	int Array[20] = { -11,12,-3,-45,-35,36,37,98,-19,-10,1,-21,-3,4,-15,6,-17,-8,-19,-10 }; // Initialize the array
 	// int Array[20] = { 1,2,3,4,5,6,7,8,9,10,-1,-2,-3,-4,-5,-6,-7,-8,-9,-10 }; // Initialize the array
 	int positive[20], negative[20]; // Create variables for the split positive and negative arrays

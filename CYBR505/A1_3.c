@@ -1,7 +1,7 @@
 #include<stdio.h>
 #define SIZE 25 //DEFINE the size of the arrays
 
-void addTicket(int Plates[], int ParkingTicket[], int SpeedTicket[], int DrunkTicket[], int ticketType, int plateIndex);
+void addTicket(int ParkingTicket[], int SpeedTicket[], int DrunkTicket[], int ticketType, int plateIndex);
 int searchPlates(int Plates[], int plateNum);
 void printCarHistory(int Plates[], int ParkingTicket[], int SpeedTicket[], int DrunkTicket[], int plateIndex);
 void printAllHistory(int Plates[], int ParkingTicket[], int SpeedTicket[], int DrunkTicket[]);
@@ -138,7 +138,8 @@ int main()
 		// Accept user input for the command
 		scanf_s(" %c", &commandSelect, 1);
 		// Validity check on the user input
-		while (!(commandSelect == 'P' || commandSelect == 'S' || commandSelect == 'D' || commandSelect == 'R' || commandSelect == 'A' || commandSelect == 'Q' || commandSelect == 'p' || commandSelect == 's' || commandSelect == 'd' || commandSelect == 'r' || commandSelect == 'a' || commandSelect == 'q'))
+		while (!(commandSelect == 'P' || commandSelect == 'S' || commandSelect == 'D' || commandSelect == 'R' || commandSelect == 'A' \
+			|| commandSelect == 'Q' || commandSelect == 'p' || commandSelect == 's' || commandSelect == 'd' || commandSelect == 'r' || commandSelect == 'a' || commandSelect == 'q'))
 		{
 			printf("\nInvalid entry, please select based on the following:\n\n");
 			printf("P:\tAdding a parking ticket\n");
@@ -158,7 +159,7 @@ int main()
 			ticketType = 1; // Ticket type 1 is Parking Ticket
 			plateIndex = validatePlateEntry(Plates); // Get the license plate number
 			if (plateIndex == -2) break; // If user inputs "0", exit to main menu
-			addTicket(Plates, ParkingTicket, SpeedTicket, DrunkTicket, ticketType, plateIndex); // Add a parking ticket
+			addTicket(ParkingTicket, SpeedTicket, DrunkTicket, ticketType, plateIndex); // Add a parking ticket
 			printf("Parking Ticket added succesfully!\n"); // Print success
 			printCarHistory(Plates, ParkingTicket, SpeedTicket, DrunkTicket, plateIndex); // Print the updated history for that vehicle
 
@@ -168,7 +169,7 @@ int main()
 			ticketType = 2; // Ticket type 2 is Speeding Ticket
 			plateIndex = validatePlateEntry(Plates); // Get the license plate number
 			if (plateIndex == -2) break; // If user inputs "0", exit to main menu
-			addTicket(Plates, ParkingTicket, SpeedTicket, DrunkTicket, ticketType, plateIndex); // Add a speeding ticket
+			addTicket(ParkingTicket, SpeedTicket, DrunkTicket, ticketType, plateIndex); // Add a speeding ticket
 			printf("Speeding Ticket added succesfully!\n"); // Print success
 			printCarHistory(Plates, ParkingTicket, SpeedTicket, DrunkTicket, plateIndex); // Print the updated history for that vehicle
 			break;
@@ -177,7 +178,7 @@ int main()
 			ticketType = 3; // Ticket type 3 is Drunk Driving Ticket
 			plateIndex = validatePlateEntry(Plates); // Get the license plate number
 			if (plateIndex == -2) break; // If user inputs "0", exit to main menu
-			addTicket(Plates, ParkingTicket, SpeedTicket, DrunkTicket, ticketType, plateIndex); // Add a drunk driving ticket
+			addTicket(ParkingTicket, SpeedTicket, DrunkTicket, ticketType, plateIndex); // Add a drunk driving ticket
 			printf("Drunk Driving Ticket added succesfully!\n"); // Print success 
 			printCarHistory(Plates, ParkingTicket, SpeedTicket, DrunkTicket, plateIndex); // Print the updated history for that vehicle
 
@@ -202,7 +203,7 @@ int main()
 // Function addTicket -- increments the ticket counters
 // Inputs: 4 initialization arrays, ticket type, and license plate index
 // Output: Updated initialization array with incremented ticket value
-void addTicket(int Plates[], int ParkingTicket[], int SpeedTicket[], int DrunkTicket[], int ticketType, int plateIndex)
+void addTicket(int ParkingTicket[], int SpeedTicket[], int DrunkTicket[], int ticketType, int plateIndex)
 {
 	switch (ticketType)
 	{

@@ -16,6 +16,7 @@ int main()
 		scanf_s("%d", &n);
 	}
 	Create(ArrayVal,n); // Gets values for the array
+	printf("\n----------------------------------------------\n");
 	printf("This is the array prior to reversing:\n");
 	PrintArray(ArrayVal, n); // Prints the array
 	Reverse(ArrayVal,n); // Reverses values in the array
@@ -65,6 +66,9 @@ void Reverse(int ArrayVar[11], int n)
 	}
 	return;
 }
+
+
+
 // Function -- PrintArray -- prints the array
 // Input: memory address of the array, size of array
 // Output: prints the array
