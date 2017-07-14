@@ -1,5 +1,5 @@
 .data
-array: .word 40
+array: .space 40
 inputPrompt: .asciiz "How many numbers you like to enter to calculate median of (0<n<11): "
 enterNumber: .asciiz "Enter number "
 errorOutOfRange: .asciiz "Error, out of range 0<n<11, try again: "
