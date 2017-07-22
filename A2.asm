@@ -83,23 +83,33 @@ jr $ra
 
 ######## reverseArray function #############
 reverseArray:
-li $t0, $0 # Head index = 0
-add $s0, $a0, $0 # Tail index = arraySize = $s0
+li $s0, 0 # Head index = 0
+add $s1, $a0, $0 # Tail index = arraySize = $s0
+add $s1, $s1,-1
+la $s2, array # Base Address of array in $t0
 swap:
-bgt $t0, $s0, exitReverse
+bgt $s0, $s1, exitReverse
 
-la $s1, array # Base Address of array in $t0
-add $t1, $s0, $0 # Tail ($t1) = arraySize
-add $t1, $t1,$t1 # Index Tail x 2
-add $t1, $t1, $t1 # Index Tail x 4
 
-add $t2, $t0,$0 #Head $t2 index
+add $t1, $s0, $0 # Head ($t1) = arraySize
+add $t1, $t1,$t1 # Index Head x 2
+add $t1, $t1, $t1 # Index Head x 4
+add $t1, $s2, $t1
+
+
+add $t2, $s1,$0 #Tail $t2 index
 add $t2, $t2, $t2 #Index head x2
 add $t2, $t2, $t2 #Index head x4
+add $t2, $s2, $t2
 
-add $t0, $t0,1
-add $s0, $s0,-1
-j swap:
+lw $t4, 0($t2)
+lw $t3, 0($t1)
+sw $t4, 0($t1)
+sw $t3, 0($t2)
+
+add $s0, $s0,1
+add $s1, $s1,-1
+j swap
 exitReverse:
 jr $ra
 ######## printArray function ###############
