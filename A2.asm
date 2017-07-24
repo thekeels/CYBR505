@@ -41,21 +41,21 @@ jal printArray
 li $v0, 10 # Exit
 syscall
 
-######## FailValidity function
+######## FailValidity function #############
 FailValidity:
 li $v0, 4
 la $a0, errorValidity
 syscall
 j Begin
 
-######## FailNegative function
+######## FailNegative function #############
 FailNegative:
 li $v0, 4
 la $a0, errorNegative
 syscall
 j making_array
 
-######## FailDivisible function
+######## FailDivisible function ############
 FailDivisible:
 li $v0, 4
 la $a0, errorDivisible
