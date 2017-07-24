@@ -1,15 +1,14 @@
 .data
 array:	.space 80
 inputPrompt: .asciiz "Enter a value for array size (0<n<20): "
-arrayPrint: .asciiz "\nThe array values are: "
+readNumPrompt: .asciiz "Please enter a number to input into the array: "
+forwardArrayPrint: .asciiz "\nThe entered array values are: "
+reverseArrayPrint: .asciiz "\nThe reversed array values are: "
 spacePrint: .asciiz " "
-
-
-
-
+errorValidity: .asciiz "Error, entered value is outside the valid range.\n\n"
+errorNegative: .asciiz "Error, entered value is outside the valid range (negative).\n\n"
+errorDivisible: .asciiz "Error, entered value is outside the valid range (not divisible by 3).\n\n"
 .text
-
-main:
 
 Begin:
 li $v0, 4
@@ -19,26 +18,49 @@ jal readNum
 add $a0, $v0, $0 # Store the readNum value in $a0 for sending to verifySize function
 sw $v0, 0($sp) # Save the arraysize on stack for use later
 jal verifySize
-
 add $a0, $v0, $0 # Store the validity check answer in $a0 for sending to createArray function
-beq $v0, $0, Begin # Go to createArray if the validity check 0<n<20 is OK 
+beq $v0, $0, FailValidity # Go to createArray if the validity check 0<n<20 is OK 
 lw $s0, 0($sp) # Retrieve array size from stack
 add $a0, $s0,$0 # Store the array size in $a0 for sending to createArray
 jal createArray
-lw $s0, 0($sp)
+li $v0, 4
+la $a0, forwardArrayPrint
+syscall
+lw $s0, 0($sp) # Retrieve array size from stack
 add $a0, $s0, $0 # Store the array size in $a0 for sending to printArray
 jal printArray
-lw $s0, 0($sp)
+lw $s0, 0($sp) # Retrieve array size from stack
 add $a0, $s0, $0 # Store the array size in $a0 for sending to reverseArray
 jal reverseArray
-lw $s0, 0($sp)
+li $v0, 4
+la $a0, reverseArrayPrint
+syscall
+lw $s0, 0($sp) # Retrieve array size from stack
 add $a0, $s0, $0 # Store the array size in $a0 for sending to printArray
 jal printArray
 li $v0, 10 # Exit
 syscall
 
+######## FailValidity function
+FailValidity:
+li $v0, 4
+la $a0, errorValidity
+syscall
+j Begin
 
+######## FailNegative function
+FailNegative:
+li $v0, 4
+la $a0, errorNegative
+syscall
+j making_array
 
+######## FailDivisible function
+FailDivisible:
+li $v0, 4
+la $a0, errorDivisible
+syscall
+j making_array
 
 ######## readNum function ##################
 readNum:
@@ -55,6 +77,7 @@ jr $ra
 verifySizeNotOk:
 li $v0, 0
 jr $ra
+
 ######## createArray function ##############
 createArray:
 li $s0, 0 ## Store counter = 0 in $s0
@@ -62,21 +85,27 @@ add $sp, $sp, -4 # Make room on the stack
 sw $ra, 0($sp) # Save the return to main address on the stack
 add $s1, $a0, $0 # Save the array size in $s1
 making_array:
+li $v0, 4
+la $a0, readNumPrompt
+syscall
 jal readNum # Go to readNum function to retrieve a user entered array value
 add $s2, $v0, $0 # Store the user entered array value in $s2
 add $a0, $v0, $0 # Store the user entered array value in $a0 for sending to checkNumPositive function
 jal checkNumPositive
-beq $v0, $0, making_array
+beq $v0, $0, FailNegative
 jal divisibleBy3
-beq $v0, $0, making_array
+beq $v0, $0, FailDivisible
 la $t0, array
 li $t1, 4
+# Calculate the offset from the base address of the array, and store the value at that location
 mult $s0, $t1
 mflo $t2
 add $t0, $t0, $t2
 sw $s2, 0($t0)
+# Increment counter
 add $s0, $s0,1
 blt $s0, $s1, making_array
+# Return to main
 lw $ra, 0($sp)
 add $sp, $sp,4
 jr $ra
@@ -89,37 +118,33 @@ add $s1, $s1,-1
 la $s2, array # Base Address of array in $t0
 swap:
 bgt $s0, $s1, exitReverse
-
-
-add $t1, $s0, $0 # Head ($t1) = arraySize
+# Calculate the index offset for the head value
+add $t1, $s0, $0 # Head ($t1) = 0
 add $t1, $t1,$t1 # Index Head x 2
 add $t1, $t1, $t1 # Index Head x 4
 add $t1, $s2, $t1
-
-
+# Calculate the index offset for the tail value
 add $t2, $s1,$0 #Tail $t2 index
-add $t2, $t2, $t2 #Index head x2
-add $t2, $t2, $t2 #Index head x4
+add $t2, $t2, $t2 #Index tail x2
+add $t2, $t2, $t2 #Index tail x4
 add $t2, $s2, $t2
-
+# Perform the swap of head into the tail and tail into the head
 lw $t4, 0($t2)
 lw $t3, 0($t1)
 sw $t4, 0($t1)
 sw $t3, 0($t2)
-
+# Increment the head value, decrement the tail value
 add $s0, $s0,1
 add $s1, $s1,-1
 j swap
 exitReverse:
 jr $ra
+
 ######## printArray function ###############
 printArray:
 li $t4, 0 # Counter stored in $t4
 li $t2, 4 # 4 stored in $t2
 add $t1, $a0,$0 # Save the array size in $t1
-li $v0, 4
-la $a0, arrayPrint
-syscall
 printArrayloop:
 la $t0, array # Save the base address in $t0
 mult $t4,$t2 # offset calculated
@@ -135,8 +160,6 @@ add $t4, $t4, 1 # Add 1 to counter
 blt $t4, $t1, printArrayloop
 jr $ra
 
-
- 
 ######## divisibleBy3 function #############
 divisibleBy3:
 li $t0, 3
@@ -148,7 +171,6 @@ jr $ra
 divisibleBy3OK:
 li $v0,1
 jr $ra
-
 
 ######## checkNumPositive function #########
 checkNumPositive:
