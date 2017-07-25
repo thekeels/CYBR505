@@ -18,25 +18,20 @@ jal readNum
 add $a0, $v0, $0 # Store the readNum value in $a0 for sending to verifySize function
 sw $v0, 0($sp) # Save the arraysize on stack for use later
 jal verifySize
-add $a0, $v0, $0 # Store the validity check answer in $a0 for sending to createArray function
 beq $v0, $0, FailValidity # Go to createArray if the validity check 0<n<20 is OK 
-lw $s0, 0($sp) # Retrieve array size from stack
-add $a0, $s0,$0 # Store the array size in $a0 for sending to createArray
+lw $a0, 0($sp) # Retrieve array size from stack, store in $a0 for sending to createArray
 jal createArray
 li $v0, 4
 la $a0, forwardArrayPrint
 syscall
-lw $s0, 0($sp) # Retrieve array size from stack
-add $a0, $s0, $0 # Store the array size in $a0 for sending to printArray
+lw $a0, 0($sp) # Retrieve array size from stack, store in $a0 for sending to printArray
 jal printArray
-lw $s0, 0($sp) # Retrieve array size from stack
-add $a0, $s0, $0 # Store the array size in $a0 for sending to reverseArray
+lw $a0, 0($sp) # Retrieve array size from stack, store in $a0 for sending to reverseArray
 jal reverseArray
 li $v0, 4
 la $a0, reverseArrayPrint
 syscall
-lw $s0, 0($sp) # Retrieve array size from stack
-add $a0, $s0, $0 # Store the array size in $a0 for sending to printArray
+lw $a0, 0($sp) # Retrieve array size from stack, store in $a0 for sending to printArray 
 jal printArray
 li $v0, 10 # Exit
 syscall
@@ -72,15 +67,23 @@ jr $ra # Return to main
 verifySize:
 bgt $a0,19, verifySizeNotOk
 blt $a0, 1, verifySizeNotOk
+# Return 1 if size is valid
 li $v0, 1
 jr $ra
 verifySizeNotOk:
+# Return 0 if size is invalid
 li $v0, 0
 jr $ra
 
 ######## createArray function ##############
+# s0 = counter
+# s1 = array size
+# s2 = user entered array value
+# t0 = array base address
+# t1 = 4
+# t2 = offset from base address (counter * 4)
 createArray:
-li $s0, 0 ## Store counter = 0 in $s0
+li $s0, 0 # Store counter = 0 in $s0
 add $sp, $sp, -4 # Make room on the stack
 sw $ra, 0($sp) # Save the return to main address on the stack
 add $s1, $a0, $0 # Save the array size in $s1
@@ -111,20 +114,27 @@ add $sp, $sp,4
 jr $ra
 
 ######## reverseArray function #############
+# s0 = head index
+# s1 = tail index
+# s2 = array base address
+# t1 = head index byte offset
+# t2 = tail index byte offset
+# t3 = head value
+# t4 = tail value
 reverseArray:
-li $s0, 0 # Head index = 0
-add $s1, $a0, $0 # Tail index = arraySize = $s0
+li $s0, 0 # Head index = $s0 = 0
+add $s1, $a0, $0 # Tail index = arraySize = $s1
 add $s1, $s1,-1
-la $s2, array # Base Address of array in $t0
+la $s2, array # Base Address of array in $s2
 swap:
 bgt $s0, $s1, exitReverse
 # Calculate the index offset for the head value
-add $t1, $s0, $0 # Head ($t1) = 0
+add $t1, $s0, $0 # Head ($t1) index = 0
 add $t1, $t1,$t1 # Index Head x 2
 add $t1, $t1, $t1 # Index Head x 4
 add $t1, $s2, $t1
 # Calculate the index offset for the tail value
-add $t2, $s1,$0 #Tail $t2 index
+add $t2, $s1,$0 # Tail ($t2) index = array size
 add $t2, $t2, $t2 #Index tail x2
 add $t2, $t2, $t2 #Index tail x4
 add $t2, $s2, $t2
@@ -142,6 +152,11 @@ jr $ra
 
 ######## printArray function ###############
 printArray:
+# t4 = counter
+# t2 = 4
+# t1 = array size
+# t0 = array base address
+# t3 = offset from base address (counter * 4)
 li $t4, 0 # Counter stored in $t4
 li $t2, 4 # 4 stored in $t2
 add $t1, $a0,$0 # Save the array size in $t1
@@ -163,6 +178,7 @@ jr $ra
 ######## divisibleBy3 function #############
 divisibleBy3:
 li $t0, 3
+# Divide entered value by 3, if remainder = 0, then number is divisible by 3
 div $a0, $t0
 mfhi $t1
 beq $t1, $0, divisibleBy3OK
