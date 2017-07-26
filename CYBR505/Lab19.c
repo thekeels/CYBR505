@@ -10,7 +10,7 @@ int Lab19() {
 	char * Encrypted;
 	char * Decrypted;
 	char Input[len];
-	char key = 10;
+	char key = 13;
 
 	printf("Enter your string: ");
 	//Read in a string
