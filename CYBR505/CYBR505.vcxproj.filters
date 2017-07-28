@@ -129,6 +129,9 @@
     <ClCompile Include="Lab25.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Lab38.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="LabList.h">

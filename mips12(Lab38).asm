@@ -34,6 +34,8 @@ la $a0, sortPrint
 syscall
 add $a0, $s0,0
 jal SortArray
+add $a0, $s0, $0
+jal PrintArray
 
 li $v0, 10
 syscall
@@ -102,22 +104,43 @@ jr $ra
 ### Sort Array function ###
 SortArray:
 add $t0, $a0, $0 # Store length in array
+
+add $t1, $t0,$0 # i counter
 la $s4, array
-li $t1, 0 # i counter
-li $t2, 0 # j counter
-add $s5, $s5, 4
-startSort:
-beq $t2, $t0, endSort
-addi $t2, $t1, 1
-mult $t2, $s5
-mflo $t2
+add $s5, $s5, 4 # value of 4 for calculating offset
+startiLoop:
 
-lw $t3, 0($s4)
+#li $t2, 0 # j counter
+#addi $t2, $t1, 1
+#mult $t2, $s5
+#mflo $t2
+#add $s4, $s4,$t1 # address of Array[i] (i)
+lw $t5, 0($s4) # Value of Array[i]
+add $t2,$t1,1 # j = i+1
+add $s6, $s4,4 # address of Array[j] (j=i+1)
+lw $t3, 0($s6) # value of Array[j]
+beq $t1, $0, endSort
+startjLoop:
+
+beq $t2, $0, endjLoop
+bgt $t3, $t5 endjLoop
+add $t4, $t5, $0 # Load temp = Array[i]
+sw $t3, 0($s4)
+sw $t5, 0($s6)
+#add $t5, $t3, $0
+#add $t3, $t4,$0
 
 
-add $s4, $s4, 4
-add $t1, $t1, 1
-j startSort
+
+add $t2,$t2,-1
+add $s6, $s6,4
+add $s4,$s4,4
+endjLoop:
+add $t2, $t2, -1
+j startjLoop
+endiLoop:
+add $t1,$t1,-1
+j startiLoop
 endSort:
 jr $ra
 
